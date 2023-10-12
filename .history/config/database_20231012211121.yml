@@ -20,10 +20,6 @@ default: &default
 
 development:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
   database: fanclub_development
 
 # Warning: The database defined as "test" will be erased and
@@ -31,10 +27,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
   database: fanclub_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -59,8 +51,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  # database: fanclub_production
-  # username: fanclub
-  # password: <%= ENV["FANCLUB_DATABASE_PASSWORD"] %>
+  database: fanclub_production
+  username: fanclub
+  password: <%= ENV["FANCLUB_DATABASE_PASSWORD"] %>
