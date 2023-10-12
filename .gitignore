@@ -29,3 +29,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# 20231012下記を追記
+# .DS_Storeという不要なファイルがGitで管理されなくなる記述
+.Ds_Store
+# 保存するごとにhistoryを生成させなくする記述
+.history
