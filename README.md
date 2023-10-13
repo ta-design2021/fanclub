@@ -17,7 +17,6 @@
 | birth_date         | date       | null: false                    |
 | phone_number       | string     | null: false                    |
 | membership_plan    | references | null: false, foreign_key: true |
-| address            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -27,7 +26,10 @@
 <!-- # membership_paymentsテーブルとのアソシエーション -->
 - has_many :membership_payments
 <!-- # addressesテーブルとのアソシエーション -->
-- belongs_to :address
+- has_one :address
+
+<!-- アクティブハッシュで性別（男性、女性、その他）を選択する（セレクトボックス） -->
+<!-- 一人のユーザーは一つの住所を持つ -->
 
 ## membership_plans テーブル
 
@@ -40,7 +42,9 @@
 
 <!-- # usersテーブルとのアソシエーション -->
 
-- has_many :user
+- has_one :user
+
+<!-- アクティブハッシュで月額、年額を選択する（セレクトボックス） -->
 
 ## membership_payments テーブル
 
